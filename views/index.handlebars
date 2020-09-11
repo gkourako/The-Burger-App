@@ -1,0 +1,36 @@
+<h1>The Burger App</h1>
+
+<h2>Burgers anxiously waiting to be devoured!</h2>
+
+<ul>
+  {{#each burger_name}}
+  {{#unless devoured}}
+  {{> burgers/burger-block devoured=false}}
+  {{/unless}}
+  {{/each}}
+</ul>
+
+
+<h2>Burgers that have been devoured!</h2>
+<ul>
+  {{#each burger_name}}
+  {{#if devoured}}
+  <li>
+    {{burger_name}}
+  </li>
+  {{/if}}
+  {{/each}}
+
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form create-burger">
+
+  <div class="form-group">
+    <label for="ca">Whats the burger called?:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+
+  <button class="create-burger" type="submit">Submit Burger</button>
+</form>
