@@ -1,36 +1,54 @@
-<h1>The Burger App</h1>
+<section class="container text-center">
+<br>
+<div class="row">
+  <div class="col-sm-12 bg-dark">
+  <h1 class="text-light">The Burger App <i class="fas fa-hamburger"></i></h1>
+  </div>
+</div>
+<br>
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Add a Burger</h2>
+      <form class="create-form create-burger">
 
-<h2>Burgers anxiously waiting to be devoured!</h2>
-
-<ul>
-  {{#each burger_name}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devoured=false}}
-  {{/unless}}
-  {{/each}}
-</ul>
-
-
-<h2>Burgers that have been devoured!</h2>
-<ul>
-  {{#each burger_name}}
-  {{#if devoured}}
-  <li>
-    {{burger_name}}
-  </li>
-  {{/if}}
-  {{/each}}
-
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form create-burger">
-
-  <div class="form-group">
-    <label for="ca">Whats the burger called?:</label>
-    <input type="text" id="ca" name="name">
+        <div class="form-group">
+          <label for="ca">Whats the burger called?:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+    </div>
   </div>
 
+  <button class="create-burger btn btn-warning m-2" type="submit">Submit Burger</button>
+  </form>
+<div class="jumbotron jumbotron-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      
+      <h2>Burgers waiting to be devoured!</h2>
 
-  <button class="create-burger" type="submit">Submit Burger</button>
-</form>
+      <ul class="list-group">
+        {{#each burger_name}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+
+    </div>
+    <div class="col-sm-6">
+      <h2>Burgers that have been devoured!</h2>
+      <ul class="list-group">
+        {{#each burger_name}}
+        {{#if devoured}}
+        <li class="list-group-item">
+          {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+
+      </ul>
+    </div>
+</div>
+
+
+</section>
